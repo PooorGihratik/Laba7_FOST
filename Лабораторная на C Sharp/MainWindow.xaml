@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Laba8_FOST"
         mc:Ignorable="d"
-        Title="Лабораторная работа блять" Height="522" Width="837.5">
+        Title="Лабораторная работа блять" Height="522" Width="837.5" ResizeMode="CanMinimize">
     <Grid x:Name ="grid1" Background="#FFFFE2E2" Margin="0,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition/>

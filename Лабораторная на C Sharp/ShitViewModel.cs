@@ -28,7 +28,7 @@ namespace Laba8_FOST
             {
                 obj = new MathObject(Convert.ToDouble(speed), Convert.ToDouble(angle), inRadians);
                 string result = "";
-                for (int i = 0; i < 500; i++)
+                for (int i = 0; i < 5000; i++)
                 {
                     string line = obj.ChangePositionInDeltaTime();
                     writer.WriteLine(line);

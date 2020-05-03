@@ -10,7 +10,7 @@ namespace Laba8_FOST
     {
         const float pi = 3.141592f;
         const float acceleration = -9.8f;
-        private readonly float deltaTime = 0.01f;
+        private readonly float deltaTime = 0.0005f;
         private float xspeed;
         private float yspeed;
         private float angle;
