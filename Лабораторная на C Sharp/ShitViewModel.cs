@@ -9,6 +9,7 @@ namespace Laba8_FOST
 {
     class ShitViewModel
     {
+        const int countOfPoints = 1000;
         MathObject obj;
         string path = Path.Combine(Environment.CurrentDirectory, "output.txt");
         StreamWriter writer;
@@ -18,22 +19,23 @@ namespace Laba8_FOST
         {
             //Отчистка файла от прошлых данных
             writer = new StreamWriter(path, false, Encoding.Default);
-            writer.WriteLine("");
+            writer.Write("");
             writer.Close();
             writer = new StreamWriter(path, true, Encoding.Default);
             //Форматирование входных данных(Удаление пробелов и замена на запятые)
             speed = speed.Replace(".", ",").Replace(" ", "");
             angle = angle.Replace(".", ",").Replace(" ", "");
+            //Проверка на идиота
             try
             {
-                obj = new MathObject(Convert.ToDouble(speed), Convert.ToDouble(angle), inRadians);
+                obj = new MathObject(Convert.ToDouble(speed), Convert.ToDouble(angle), inRadians, countOfPoints);
                 string result = "";
-                for (int i = 0; i < 5000; i++)
+                for (int i = 0; i < countOfPoints; i++)
                 {
+                    if (obj.YPosition < 0) break;
                     string line = obj.ChangePositionInDeltaTime();
                     writer.WriteLine(line);
                     result += line + "\n";
-                    if (obj.YPosition <= 0) break;
                 }
                 writer.Close();
                 return result;
