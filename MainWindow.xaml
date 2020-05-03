@@ -1,0 +1,30 @@
+﻿<Window x:Class="Laba8_FOST.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba8_FOST"
+        mc:Ignorable="d"
+        Title="Лабораторная работа блять" Height="522" Width="837.5">
+    <Grid x:Name ="grid1" Background="#FFFFE2E2" Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="results" Margin="438,59,6,10" TextWrapping="Wrap" Text="" AllowDrop="False" IsReadOnly="True" VerticalScrollBarVisibility="Auto" MaxLines="500" TextOptions.TextFormattingMode="Display"/>
+        <Label Content="Вводи свою хуйню сюда, дебик:" Margin="10,10,474,437" FontSize="20"/>
+        <Grid HorizontalAlignment="Left" Height="211" Margin="10,59,0,0" VerticalAlignment="Top" Width="419" Background="#FFFDFDAC">
+            <TextBox x:Name="speed" HorizontalAlignment="Left" Height="30" Margin="230,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+            <Button x:Name="but1" Content="ВАЛЕРА, ОЧКО ПОЛЫХАЕТ" Margin="10,157,10,0" VerticalAlignment="Top" Height="44" Click="But1_Click"/>
+            <TextBox x:Name="angle" HorizontalAlignment="Left" Height="30" Margin="230,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,30,0,0" TextWrapping="Wrap" Text="Вводи сюды скорость, балдаебик" VerticalAlignment="Top" Height="30" Width="225" TextAlignment="Left" FontSize="14"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,65,0,0" TextWrapping="Wrap" Text="А сюды угол, братан" VerticalAlignment="Top" Height="30" Width="225" TextAlignment="Left" FontSize="14"/>
+            <StackPanel Margin="230,100,0,72">
+                <RadioButton x:Name="inRadians" GroupName="Angles" Content="В радианах" IsChecked="True" FontSize="14" Checked="InRadians_Checked"/>
+                <RadioButton GroupName="Angles" Content="В градусах" FontSize="14" Checked="RadioButton_Checked" />
+            </StackPanel>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="438,10,0,0" TextWrapping="Wrap" Text="Ахуенные результаты, пиздатые координаты:" VerticalAlignment="Top" Height="44" Width="382" FontSize="18"/>
+    </Grid>
+</Window>
