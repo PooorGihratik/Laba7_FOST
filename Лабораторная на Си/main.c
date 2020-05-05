@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 	} else{
 		printf("File is opened\n");
 	}
-	float x, y, t=0, v, angle;
+	float x = 0, y = 0, t=0, v, angle, Xo = 0.4, Yd = 0.4, Yt = 0.6;
 	int tmp;
 	const float g = 9.81;
 	printf("Enter speed: ");
@@ -34,12 +34,38 @@ int main(int argc, char *argv[]) {
 			printf("Incorrect value, please try again\n");
 		}
 	} while(1);
+	printf("Choose mode:\n1.With obstale\n2.Without obtacle\n");
 	do{
-		t += 0.0005;
-		x = v * cos(angle) * t;
-		y = v * sin(angle) * t - g*t*t/2;
-		fprintf(fp, "%f   %f\n", x, y);
-	} while( y > 0);
+		scanf("%d", &tmp);
+		if(tmp != 1 && tmp != 2){
+			printf("Incorrect value, please try again\n");
+		} else {
+			break;
+		}
+	} while(1);
+	if(tmp == 1){
+		do{
+			t += 0.0005;
+			x = v * cos(angle) * t;
+			y = v * sin(angle) * t - g*t*t/2;
+			if(x >= (Xo - 0.01) && x <= (Xo + 0.01) && y >= Yt){
+				printf("There was a collision");
+				break;
+			} else if (y <= Yd && x >= (Xo - 0.01) && x <= (Xo + 0.01)){
+				printf("There was a collision");
+				break;
+			} else {
+				fprintf(fp, "%f   %f\n", x, y);
+			}
+		} while( y > 0);
+	} else if (tmp == 2){
+		do{
+			t += 0.0005;
+			x = v * cos(angle) * t;
+			y = v * sin(angle) * t - g*t*t/2;
+			fprintf(fp, "%f   %f\n", x, y);
+		} while( y > 0);
+	}
 	fclose(fp);
 	return 0;
 }
