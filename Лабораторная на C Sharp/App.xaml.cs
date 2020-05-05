@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Laba8_FOST
+namespace Laba7_FOST
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Laba8_FOST.Properties
+namespace Laba7_FOST.Properties
 {
 
 

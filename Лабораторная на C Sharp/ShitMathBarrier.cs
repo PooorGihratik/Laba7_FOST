@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laba8_FOST
+namespace Laba7_FOST
 {
     class ShitMathBarrier
     {

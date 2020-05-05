@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Laba8_FOST
+namespace Laba7_FOST
 {
     class MathObject
     {
+        const int countOfPoints = 1000;
         const float pi = 3.141592f;
         const float acceleration = -9.80665f;
         private readonly float deltaTime;
@@ -17,7 +15,7 @@ namespace Laba8_FOST
         internal float XPosition { get; private set; }
         internal float YPosition { get; private set; }
 
-        internal MathObject(double speed, double angle, bool inRadian,int countOfPoints)
+        internal MathObject(double speed, double angle, bool inRadian)
         {
             if (!inRadian) this.angle = ((float)angle * pi) / 180;
             else this.angle = (float)angle;
@@ -26,12 +24,23 @@ namespace Laba8_FOST
             deltaTime =  (float)(2 * speed) / ((countOfPoints-1) * -acceleration);
         }
 
-        internal string ChangePositionInDeltaTime()
+        internal void ChangePositionInDeltaTime()
         {
             XPosition += xspeed * deltaTime;
             YPosition += yspeed * deltaTime;
             yspeed += acceleration * deltaTime;
-            return $"{XPosition}\t{YPosition}";
+        }
+
+        internal List<(float,float)> ThrowObject()
+        {
+            List<(float, float)> Results = new List<(float, float)>();
+            for (int i=0;i<countOfPoints;i++)
+            {
+                ChangePositionInDeltaTime();
+                Results.Add((XPosition, YPosition));
+                if (YPosition <= 0) break;
+            }
+            return Results;
         }
     }
 }
